@@ -17,3 +17,6 @@ And then:
 ```bash
     ./make.sh
 ```
+
+### Screenshot
+![image](https://github.com/user-attachments/assets/7fd52ca5-03ec-48d7-a2db-ebb5f27637db)
