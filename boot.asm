@@ -1,22 +1,21 @@
-; Multiboot header for QEMU -kernel option
 section .multiboot
 align 4
 multiboot_header:
-    dd 0x1BADB002              ; Magic number
-    dd 0x00000003              ; Flags
-    dd -(0x1BADB002 + 0x00000003) ; Checksum
+    dd 0x1BADB002              ;magic number
+    dd 0x00000003              ;flags
+    dd -(0x1BADB002 + 0x00000003) ;checksum
 
 section .text
 global _start
 _start:
-    ; Set up stack
+    ;set up stack
     mov esp, stack_top
 
-    ; Call kernel main
+    ;call kernel_main()
     extern kernel_main
     call kernel_main
 
-    ; Halt if kernel returns
+    ;halt if kernel returns
     cli
     hlt
 
